@@ -1,8 +1,4 @@
-const mongoose = require("mongoose");
-const express = require('express');
-const User = require('../models/Isola');
 const Isola = require("../models/Isola");
-const Magazzino = require("../models/Magazzino")
 
 //Getting all Isola
 exports.getAllIsola = (req, res) => {
