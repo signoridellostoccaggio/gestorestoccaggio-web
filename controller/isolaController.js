@@ -1,12 +1,15 @@
 const Isola = require("../models/Isola");
 
 //Getting all Isola
-exports.getAllIsola = (req, res) => {
+exports.getAllIsola = async (req, res) => {
     try {
-        const isole = Isola.find()
+        const isole = await Isola.find()
         res.json(isole)
     } catch (err) {
-        //res.status
+        res.status(400).json({
+            status: 'Fail',
+            message: 'No Isola in DB'
+        })
     }
 }
 
@@ -61,7 +64,7 @@ exports.editIsola = (req, res) => {
                 message: 'Isola does not exist |  Invalid ID'
             });
         }
-        data.replaceOne(updatedUser, err => {
+        data.replaceOne(updateIsola, err => {
             if (err) {
                 res.status(500).json({
                     status: 'invalid',

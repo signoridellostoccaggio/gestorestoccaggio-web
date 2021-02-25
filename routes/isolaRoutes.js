@@ -11,7 +11,7 @@ router.route('/isola/create')
       .post(isolaController.createIsola);
 
 router.route('/isola/:id/edit')
-      .post(isolaController.editIsola);
+      .patch(isolaController.editIsola);
 
 router.route('/isola/:id/delete')
       .delete(isolaController.removeIsola)
