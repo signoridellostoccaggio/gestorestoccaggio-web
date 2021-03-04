@@ -13,6 +13,17 @@ exports.getAllIsola = async (req, res) => {
     }
 }
 
+//Getting One Isola by ID
+exports.getOneIsola = async (req, res) => {
+    let id = req.params.id;
+    try {
+        const isola = await Isola.findById(id);
+        res.json(isola)
+    } catch (error) {
+        return res.status(500).json({message: error.message})
+    }
+}
+
 /*Creating a new Isola*/
 exports.createIsola = (req, res) => {
     const newIsola = {

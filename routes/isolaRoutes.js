@@ -7,6 +7,9 @@ const isolaController = require('../controller/isolaController')
 router.route('/isola')
       .get(isolaController.getAllIsola);
 
+router.route('/isola/:id')
+      .get(isolaController.getOneIsola);
+
 router.route('/isola/create')
       .post(isolaController.createIsola);
 
