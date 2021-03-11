@@ -17,8 +17,7 @@ a {
     border: 1px solid #28a745 !important;
 }
 
-@media screen and (max-width: 576px) {
-    .naav>a {
-        display: block !important;
-    }
+a,
+button {
+    white-space: nowrap;
 }
