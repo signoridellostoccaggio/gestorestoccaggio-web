@@ -24,11 +24,11 @@ export class UsersService {
     return createdUser.save();
   }
 
-  async findAll() {
+  findAll() {
     return this.userModel.find().exec();
   }
 
-  async findById(id: string) {
+  findById(id: string) {
     return this.userModel.findById(id).exec();
   }
 
@@ -36,7 +36,7 @@ export class UsersService {
     return this.userModel.find(o).exec();
   }
 
-  async update(id: string, updateUserDto: UpdateUserDto) {
+  update(id: string, updateUserDto: UpdateUserDto) {
     return this.userModel.findOneAndUpdate(
       { _id: id },
       updateUserDto,
@@ -44,7 +44,7 @@ export class UsersService {
     ).exec();
   }
 
-  async remove(id: string) {
+  remove(id: string) {
     return this.userModel.findByIdAndDelete(id).exec();
   }
 }

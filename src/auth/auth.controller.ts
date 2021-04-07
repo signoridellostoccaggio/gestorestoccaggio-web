@@ -45,9 +45,9 @@ export class AuthController {
     if (formData.password === formData.passwordConfirm) {
       this.usersService.create(formData);
       req.flash('success', 'Registrazione effettuata! Esegui ora l\'accesso');
-    }
-    req.flash('registerError', 'Le password non corrispondono');
-    res.redirect('/auth/register');
+    } else
+      req.flash('registerError', 'Le password non corrispondono');
+    res.redirect('/auth/login');
   }
 
   @Get('logout')

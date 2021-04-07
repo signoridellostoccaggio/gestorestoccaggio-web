@@ -6,6 +6,7 @@ import * as session               from 'express-session';
 import * as config                from './config/config.json';
 import * as passport              from 'passport';
 import { AuthExceptionFilter }    from './common/filters/auth-exception.filter';
+import { useRequestLogging }      from './middleware/request-logging';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const flash = require('connect-flash');
@@ -34,6 +35,7 @@ async function bootstrap() {
   app.use(flash());
 
   app.useGlobalFilters(new AuthExceptionFilter());
+  useRequestLogging(app);
 
   await app.listen(3000);
 }

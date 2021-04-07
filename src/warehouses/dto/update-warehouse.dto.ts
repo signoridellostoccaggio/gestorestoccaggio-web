@@ -1,8 +1,8 @@
 import { PartialType }           from '@nestjs/mapped-types';
-import { CreateUserDto }         from './create-user.dto';
+import { CreateWarehouseDto }    from './create-warehouse.dto';
 import { IsMongoId, IsNotEmpty } from 'class-validator';
 
-export class UpdateUserDto extends PartialType(CreateUserDto) {
+export class UpdateWarehouseDto extends PartialType(CreateWarehouseDto) {
   @IsNotEmpty()
   @IsMongoId()
   _id: string;
