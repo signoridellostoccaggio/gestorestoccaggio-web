@@ -1,0 +1,33 @@
+{
+  "db": {
+    "mongo": {
+      "defaultRootOptions": {
+        "useCreateIndex": true,
+        "useFindAndModify": false
+      },
+      "defaultUpdateOptions": {
+        "new": true
+      }
+    }
+  },
+  "session": {
+    "secret": "ornitorinco",
+    "cookie": {
+      "dev": {
+        "path": "/",
+        "maxAge": 8.64e+7,
+        "resave": true,
+        "saveUninitialized": false
+      },
+      "prod": {
+        "path": "/",
+        "maxAge": 8.64e+7,
+        "httpOnly": false,
+        "secure": true,
+        "sameSite": "none",
+        "resave": true,
+        "saveUninitialized": false
+      }
+    }
+  }
+}
